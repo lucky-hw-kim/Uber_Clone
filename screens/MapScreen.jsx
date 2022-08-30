@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import Map from "../components/Map";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -31,6 +31,7 @@ export default function MapScreen() {
           />
         </Stack.Navigator>
       </View>
+     
     </View>
   );
 }
