@@ -44,14 +44,14 @@ const NavigateCard = () => {
         />
       </View>
       <NavFavourites />
-      <View>
-        <TouchableOpacity className="flex-row bg-black w-24 px-4 py-3 rounded-full">
+      <View className="flex-row bg-white justify-evenly py-2 border-t border-gray-100">
+        <TouchableOpacity onPress={() => nav.navigate("RideOptionCard")} className="flex-row justify-between bg-black w-24 px-4 py-3 rounded-full">
             <Icon name="car" type="font-awesome" color="white" size={16}/>
             <Text className="text-white text-center">Rides</Text>
         </TouchableOpacity>
-        <TouchableOpacity className="flex-row bg-black w-24 px-4 py-3 rounded-full">
+        <TouchableOpacity className="justify-between flex-row w-24 px-4 py-3 rounded-full">
             <Icon name="fast-food-outline" type="ionicon" color="black" size={16}/>
-            <Text className="text-white text-center">Rides</Text>
+            <Text className="text-center">Eats</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
