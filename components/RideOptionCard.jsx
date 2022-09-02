@@ -1,4 +1,4 @@
-import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import React, { Component } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Icon } from "react-native-elements";
@@ -42,6 +42,18 @@ const RideOptionCard = () => {
       </View>
       <FlatList 
       data={data}
+      keyExtractor={item=> item.id}
+      renderItem={({item: {id, title, multiplier, image}, item})=> (
+        <TouchableOpacity>
+          <Image style={{
+            width: 100,
+            height: 100,
+            resizeMode: "contain"
+          }}
+          source={{uri: image}}
+          />
+        </TouchableOpacity>
+      )}
       />
     </SafeAreaView>
   );
