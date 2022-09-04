@@ -45,15 +45,16 @@ const RideOptionCard = () => {
         >
           <Icon name="chevron-left" type="fontawesome" />
         </TouchableOpacity>
-        <Text className="top-0 text-center py-5 text-xl">Select a Ride - {travelTimeInformation?.distance.text}</Text>
+        <Text className="top-0 text-center py-5 text-xl">Select a Ride - {travelTimeInformation?.distance?.text}</Text>
       </View>
       <FlatList 
+
       data={data}
       keyExtractor={item=> item.id}
       renderItem={({item: {id, title, multiplier, image}, item})=> (
         <TouchableOpacity 
         onPress={()=> setSelected(item)}
-        className={`flex-row justify-between items-center px-10 ${id === selected?.id && "bg-gray-200"}`}
+        className={`flex-row justify-between items-center px-6 ${id === selected?.id && "bg-gray-200"}`}
         >
           <Image style={{
             width: 100,
@@ -64,13 +65,13 @@ const RideOptionCard = () => {
           />
           <View >
             <Text className="text-xl font-semibold mt-4">{title}</Text>
-            <Text className="mt-2">Estimated: {travelTimeInformation?.duration.text} </Text>
+            <Text className="mt-2">Estimated: {travelTimeInformation?.duration?.text} </Text>
           </View>
-          <Text className="ml-2 text-xl">{new Intl.NumberFormat('en-gb', {
+          <Text className="-ml-5 text-xl">{new Intl.NumberFormat('en-gb', {
             style: 'currency',
             currency: "CAD"
           }).format(
-            (travelTimeInformation?.duration.value * SURGE_CHARGE_RATE * multiplier) / 100
+            (travelTimeInformation?.duration?.value * SURGE_CHARGE_RATE * multiplier) / 100
           )
           }</Text>
         </TouchableOpacity>
